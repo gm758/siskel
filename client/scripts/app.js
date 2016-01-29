@@ -84,7 +84,9 @@ var MovieView = Backbone.View.extend({
 var MoviesView = Backbone.View.extend({
 
   initialize: function() {
-    this.render();
+    this.collection.on('sort', function(){
+      this.render();
+    }, this);
   },
 
   render: function() {
